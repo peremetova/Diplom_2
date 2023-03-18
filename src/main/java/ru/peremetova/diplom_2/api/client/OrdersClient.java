@@ -4,9 +4,6 @@ import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import ru.peremetova.diplom_2.api.data.request.IngredientsData;
-import ru.peremetova.diplom_2.api.data.request.LoginData;
-import ru.peremetova.diplom_2.api.data.request.RegisterData;
-import ru.peremetova.diplom_2.api.data.request.UserData;
 import ru.peremetova.diplom_2.api.data.response.IngredientData;
 import ru.peremetova.diplom_2.api.data.response.IngredientResponse;
 

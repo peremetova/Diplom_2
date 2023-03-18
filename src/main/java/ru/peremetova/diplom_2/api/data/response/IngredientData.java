@@ -24,6 +24,7 @@ public class IngredientData {
     public String getId() {
         return _id;
     }
+
     @JsonProperty("_id")
     public void setId(String id) {
         this._id = id;
@@ -89,6 +90,7 @@ public class IngredientData {
     public String getImageMobile() {
         return image_mobile;
     }
+
     @JsonProperty("image_mobile")
     public void setImageMobile(String image_mobile) {
         this.image_mobile = image_mobile;
@@ -98,6 +100,7 @@ public class IngredientData {
     public String getImageLarge() {
         return image_large;
     }
+
     @JsonProperty("image_large")
     public void setImageLarge(String image_large) {
         this.image_large = image_large;

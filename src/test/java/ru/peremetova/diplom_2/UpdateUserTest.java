@@ -9,7 +9,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import ru.peremetova.diplom_2.api.client.AuthClient;
-import ru.peremetova.diplom_2.api.data.request.LoginData;
 import ru.peremetova.diplom_2.api.data.request.RegisterData;
 import ru.peremetova.diplom_2.api.data.request.UserData;
 import ru.peremetova.diplom_2.api.data.response.RegisterResponse;
@@ -27,7 +26,7 @@ public class UpdateUserTest {
     private final UserData userData;
     private String token;
 
-    public UpdateUserTest(String email, String name){
+    public UpdateUserTest(String email, String name) {
         userData = new UserData(email, name);
     }
 
@@ -62,7 +61,7 @@ public class UpdateUserTest {
     @DisplayName("Обновление данных авторизованного пользователя")
     @Description("Проверка обновления данных авторизованного пользователя.")
     public void authorizedUserDataUpdateTest() {
-       authClient
+        authClient
                 .updateUserData(token, userData)
                 .statusCode(200)
                 .assertThat()

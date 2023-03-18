@@ -2,8 +2,6 @@ package ru.peremetova.diplom_2.api.data.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.List;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OrderResponse {
     public boolean success;

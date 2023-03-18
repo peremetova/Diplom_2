@@ -13,7 +13,6 @@ import ru.peremetova.diplom_2.api.data.response.IngredientData;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.hasItem;
 
 public class UnauthorizedOrdersTest {
     private final OrdersClient ordersClient = new OrdersClient();
