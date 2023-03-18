@@ -50,8 +50,8 @@ public class AuthorizedOrdersTest {
     }
 
     @Test
-    @DisplayName("Создание заказа для авторизованного пользователя с игридиентами")
-    @Description("Создание заказа для авторизованного пользователя с игридиентами")
+    @DisplayName(value = "Создание заказа для авторизованного пользователя с игридиентами")
+    @Description(value = "Создание заказа для авторизованного пользователя с игридиентами")
     public void createAuthorizedOrderWithIngredientsTest() {
         List<IngredientData> data = ordersClient.getIngredientsData();
         String id = data.get(0).getId();
@@ -64,8 +64,8 @@ public class AuthorizedOrdersTest {
     }
 
     @Test
-    @DisplayName("Создание заказа для авторизованного пользователя без игридиентов")
-    @Description("Создание заказа для авторизованного пользователя без игридиентов")
+    @DisplayName(value = "Создание заказа для авторизованного пользователя без игридиентов")
+    @Description(value = "Создание заказа для авторизованного пользователя без игридиентов")
     public void createAuthorizedOrderWithOutIngredientsTest() {
         IngredientsData ingredientsData = new IngredientsData(List.of());
         ordersClient
@@ -76,8 +76,8 @@ public class AuthorizedOrdersTest {
     }
 
     @Test
-    @DisplayName("Создание заказа для авторизованного пользователя с неверным кэшем ингридиета")
-    @Description("Создание заказа для авторизованного пользователя с неверным кэшем ингридиета")
+    @DisplayName(value = "Создание заказа для авторизованного пользователя с неверным кэшем ингридиета")
+    @Description(value = "Создание заказа для авторизованного пользователя с неверным кэшем ингридиета")
     public void createAuthorizedOrderWithWrongIngredientsTest() {
         IngredientsData ingredientsData = new IngredientsData(List.of("wronghash"));
         ordersClient
@@ -86,8 +86,8 @@ public class AuthorizedOrdersTest {
     }
 
     @Test
-    @DisplayName("Получение заказов для авторизованного пользователя")
-    @Description("Получение заказов для авторизованного пользователя")
+    @DisplayName(value = "Получение заказов для авторизованного пользователя")
+    @Description(value = "Получение заказов для авторизованного пользователя")
     public void getAuthorizedOrdersTest() {
         List<IngredientData> data = ordersClient.getIngredientsData();
         String id = data.get(0).getId();
