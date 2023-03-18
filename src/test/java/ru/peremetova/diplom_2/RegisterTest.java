@@ -7,17 +7,17 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import ru.peremetova.diplom_2.api.client.AuthClient;
-import ru.peremetova.diplom_2.api.data.request.UserRegisterData;
+import ru.peremetova.diplom_2.api.data.request.RegisterData;
 import ru.peremetova.diplom_2.api.data.response.RegisterResponse;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
-public class CreateUserTest {
+public class RegisterTest {
     private final AuthClient authClient = new AuthClient();
-    private final UserRegisterData registerData = new UserRegisterData(
-            "test" + System.nanoTime() + "@test.ru",
-            "Test",
-            "password"
+    private final RegisterData registerData = new RegisterData(
+            TestConfig.EMAIL,
+            TestConfig.NAME,
+            TestConfig.PASSWORD
     );
     private String token;
 
@@ -38,7 +38,7 @@ public class CreateUserTest {
     @Description("Проверка cоздания пользователя.")
     public void createUserTest() {
         RegisterResponse response = authClient
-                .createUser(registerData)
+                .register(registerData)
                 .statusCode(200)
                 .assertThat()
                 .body("success", equalTo(true))
@@ -54,7 +54,7 @@ public class CreateUserTest {
     @Description("Проверка пользователя, который уже зарегистрирован.")
     public void createDoubleUserTest() {
         RegisterResponse response = authClient
-                .createUser(registerData)
+                .register(registerData)
                 .statusCode(200)
                 .assertThat()
                 .body("success", equalTo(true))
@@ -62,7 +62,7 @@ public class CreateUserTest {
                 .body()
                 .as(RegisterResponse.class);
         authClient
-                .createUser(registerData)
+                .register(registerData)
                 .statusCode(403)
                 .assertThat()
                 .body("success", equalTo(false));
@@ -76,7 +76,7 @@ public class CreateUserTest {
     public void createNoEmailUserTest() {
         registerData.setEmail(null);
         authClient
-                .createUser(registerData)
+                .register(registerData)
                 .statusCode(403)
                 .assertThat()
                 .body("success", equalTo(false));
@@ -88,7 +88,7 @@ public class CreateUserTest {
     public void createNoNameUserTest() {
         registerData.setName(null);
         authClient
-                .createUser(registerData)
+                .register(registerData)
                 .statusCode(403)
                 .assertThat()
                 .body("success", equalTo(false));
@@ -100,7 +100,7 @@ public class CreateUserTest {
     public void createNoPasswordUserTest() {
         registerData.setPassword(null);
         authClient
-                .createUser(registerData)
+                .register(registerData)
                 .statusCode(403)
                 .assertThat()
                 .body("success", equalTo(false));

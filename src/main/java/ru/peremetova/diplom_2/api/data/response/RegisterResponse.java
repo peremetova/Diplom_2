@@ -1,20 +1,16 @@
 package ru.peremetova.diplom_2.api.data.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import ru.peremetova.diplom_2.api.data.request.UserData;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RegisterResponse {
     private boolean success;
     private String accessToken;
     private String refreshToken;
+    private UserData user;
 
     public RegisterResponse() {
-    }
-
-    public RegisterResponse(boolean success, String accessToken, String refreshToken) {
-        this.success = success;
-        this.accessToken = accessToken;
-        this.refreshToken = refreshToken;
     }
 
     public boolean isSuccess() {
@@ -39,5 +35,13 @@ public class RegisterResponse {
 
     public void setRefreshToken(String refreshToken) {
         this.refreshToken = refreshToken;
+    }
+
+    public UserData getUser() {
+        return user;
+    }
+
+    public void setUser(UserData user) {
+        this.user = user;
     }
 }
