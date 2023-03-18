@@ -1,1 +1,2 @@
-# Diplom_2
+# Diplom 2
+Нужно протестировать ручки API для Stellar Burgers.
