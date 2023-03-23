@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class IngredientData {
-    private String _id;
+    private String id;
     private String name;
     private String type;
     private int proteins;
@@ -14,20 +14,20 @@ public class IngredientData {
     private int calories;
     private int price;
     private String image;
-    private String image_mobile;
-    private String image_large;
+    private String imageMobile;
+    private String imageLarge;
 
     public IngredientData() {
     }
 
     @JsonProperty("_id")
     public String getId() {
-        return _id;
+        return id;
     }
 
     @JsonProperty("_id")
     public void setId(String id) {
-        this._id = id;
+        this.id = id;
     }
 
     public String getName() {
@@ -88,22 +88,22 @@ public class IngredientData {
 
     @JsonProperty("image_mobile")
     public String getImageMobile() {
-        return image_mobile;
+        return imageMobile;
     }
 
     @JsonProperty("image_mobile")
     public void setImageMobile(String image_mobile) {
-        this.image_mobile = image_mobile;
+        this.imageMobile = image_mobile;
     }
 
     @JsonProperty("image_large")
     public String getImageLarge() {
-        return image_large;
+        return imageLarge;
     }
 
     @JsonProperty("image_large")
     public void setImageLarge(String image_large) {
-        this.image_large = image_large;
+        this.imageLarge = image_large;
     }
 
     public int getCalories() {
